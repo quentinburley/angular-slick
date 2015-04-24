@@ -86,7 +86,7 @@ angular.module('slick', [])
             fade: scope.fade is "true"
             focusOnSelect: scope.focusOnSelect is "true"
             infinite: scope.infinite isnt "false"
-            initialSlide:scope.initialSlide or 0
+            initialSlide: if scope.initialSlide? then parseInt(scope.initialSlide, 10) else 0
             lazyLoad: scope.lazyLoad or "ondemand"
             beforeChange: if attrs.onBeforeChange then scope.onBeforeChange else undefined
             onReInit: if attrs.onReInit then scope.onReInit else undefined
